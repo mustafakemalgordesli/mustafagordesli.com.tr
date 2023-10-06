@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toogle";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import SocialMediaNav from "./social-media-nav";
@@ -11,6 +11,9 @@ import { Button } from "./ui/button";
 export default function Header() {
   const pathname = usePathname();
   const [navbarOpen, SetNavbarOpen] = useState(false);
+  useEffect(() => {
+    SetNavbarOpen(false);
+  }, [pathname]);
   return (
     <>
       <header className="supports-backdrop-blur:bg-background/60 fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
@@ -20,7 +23,8 @@ export default function Header() {
         >
           <div className="mr-auto w-[170px]">
             <Link href="/" className="w-full font-bold">
-              Mustafa K. Gordesli
+              <span className="sm:hidden">M. K. G.</span>
+              <span className="hidden sm:block">Mustafa K. Gordesli</span>
             </Link>
           </div>
 
@@ -94,14 +98,59 @@ export default function Header() {
             </div>
             <div
               className={`${
-                !pathname.startsWith("/about")
-                  ? "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  : "bg-gray-700 text-white"
+                pathname.startsWith("/about")
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
               } block rounded px-3 py-2 text-base font-medium`}
             >
               <AboutLink
                 className={`${
                   pathname.startsWith("/about")
+                    ? "!text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              />
+            </div>
+            <div
+              className={`${
+                pathname.startsWith("/resume")
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+              } block rounded px-3 py-2 text-base font-medium`}
+            >
+              <ResumeLink
+                className={`${
+                  pathname.startsWith("/resume")
+                    ? "!text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              />
+            </div>
+            <div
+              className={`${
+                pathname.startsWith("/projects")
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+              } block rounded px-3 py-2 text-base font-medium`}
+            >
+              <ProjectLink
+                className={`${
+                  pathname.startsWith("/projects")
+                    ? "!text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              />
+            </div>
+            <div
+              className={`${
+                pathname.startsWith("/contact")
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+              } block rounded px-3 py-2 text-base font-medium`}
+            >
+              <ContactLink
+                className={`${
+                  pathname.startsWith("/contact")
                     ? "!text-white"
                     : "text-gray-400 hover:text-white"
                 }`}
@@ -139,35 +188,35 @@ const AboutLink = ({ pathname = "", className = "" }) => (
   </Link>
 );
 
-const ResumeLink = ({ pathname = "" }) => (
+const ResumeLink = ({ pathname = "", className = "" }) => (
   <Link
     className={`block transition-colors hover:text-foreground/80 p-2 sm:p-0 ${
       pathname.startsWith("/resume") ? "text-foreground" : "text-foreground/60"
-    }`}
+    } ${className}`}
     href="/resume"
   >
     Resume
   </Link>
 );
 
-const ProjectLink = ({ pathname = "" }) => (
+const ProjectLink = ({ pathname = "", className = "" }) => (
   <Link
     className={`block transition-colors hover:text-foreground/80 p-2 sm:p-0 ${
       pathname.startsWith("/projects")
         ? "text-foreground"
         : "text-foreground/60"
-    }`}
+    } ${className}`}
     href="/projects"
   >
     Projects
   </Link>
 );
 
-const ContactLink = ({ pathname = "" }) => (
+const ContactLink = ({ pathname = "", className = "" }) => (
   <Link
     className={` block transition-colors hover:text-foreground/80 p-2 sm:p-0 text-foreground${
       pathname.startsWith("/contact") ? "" : "/60"
-    }`}
+    } ${className}`}
     href="/contact"
   >
     Contact
