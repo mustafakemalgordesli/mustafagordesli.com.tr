@@ -32,10 +32,10 @@ export default function Contact() {
                   </div>
                   <div className="w-full">
                     <h4 className="text-dark mb-1 text-xl font-bold">
-                      Our Location
+                      Location
                     </h4>
                     <p className="text-body-color text-base">
-                      99 S.t Jomblo Park Pekanbaru 28292. Indonesia
+                      Balıkesir/Turkey
                     </p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function Contact() {
                       Phone Number
                     </h4>
                     <p className="text-body-color text-base">
-                      (+62)81 414 257 9980
+                      (+90)541 830 6845
                     </p>
                   </div>
                 </div>
@@ -76,9 +76,12 @@ export default function Contact() {
                     <h4 className="text-dark mb-1 text-xl font-bold">
                       Email Address
                     </h4>
-                    <p className="text-body-color text-base">
-                      info@yourdomain.com
-                    </p>
+                    <a
+                      href="mailto:m.kemalgordesli@gmail.com"
+                      className="text-body-color text-base hover:text-blue-500"
+                    >
+                      m.kemalgordesli@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>

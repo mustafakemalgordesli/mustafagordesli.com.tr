@@ -17,7 +17,7 @@ export default function Home() {
       <section className="h-[calc(100vh-56px)] bg-blue-600" id="resume">section3</section> */}
 
       <div className="flex flex-col sm:flex-row justify-start items-center sm:justify-center h-full w-full gap-2">
-        <div className="relative sm:mt-0 w-[225px] h-[250px] sm:w-[250px] sm:h-[300px] aspect-[4/3] m-4">
+        <div className="relative sm:mt-0 w-[225px] h-[250px] sm:w-[250px] sm:h-[300px] lg:w-[300px] lg:h-[360px] xl:w-[350px] xl:h-[420px] aspect-[6/5] m-4">
           <Image
             src="/profile.jpg"
             className="rounded-xl shadow-2xl"

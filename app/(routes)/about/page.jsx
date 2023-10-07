@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <main className="max-w-screen-xl h-screen py-14 mx-auto flex flex-col items-center justify-center gap-2">
+    <main className="max-w-screen-xl h-screen py-14 mx-auto flex flex-col items-center sm:justify-center gap-2 mt-14 sm:my-0">
       <div className="text-4xl font-bold text-center">
         About <span className="text-primary">ME</span>
       </div>
@@ -21,8 +21,9 @@ export default function About() {
           View Resume
         </a>
         <a
-          href="/about"
-          className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg"
+          href="/mustafa-gordesli-cv.pdf"
+          download="mustafa-gordesli-cv"
+          className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary font-medium text-lg"
         >
           Download CV
         </a>

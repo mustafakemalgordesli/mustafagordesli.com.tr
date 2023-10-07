@@ -4,7 +4,7 @@ import { ModeToggle } from "./mode-toogle";
 
 export default function SocialMediaNav({ className }) {
   return (
-    <nav className={`sm:flex sm:space-x-1 items-center ml-auto ${className}`}>
+    <nav className={`sm:flex sm:space-x-1 items-center ${className}`}>
       <Link
         href="/docs"
         className="flex justify-center items-center h-[2.5rem] w-[2.5rem] bg-background hover:bg-accent hover:text-accent-foreground rounded"
@@ -33,7 +33,7 @@ export default function SocialMediaNav({ className }) {
         </svg>
       </Link>
 
-      <ModeToggle className="hidden sm:inline-flex" />
+      {/* <ModeToggle className="hidden sm:inline-flex" /> */}
     </nav>
   );
 }

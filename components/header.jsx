@@ -7,6 +7,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import SocialMediaNav from "./social-media-nav";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
@@ -48,11 +49,26 @@ export default function Header() {
             </ul>
           </nav>
 
-          <SocialMediaNav className={"w-[150px] hidden sm:flex"} />
+          {/* <Button
+            variant="outline"
+            size="icon"
+            className="ml-auto rounded border-0 h-10 w-10"
+          >
+            <Image
+              src="/turkey.png"
+              width={20.8}
+              height={20.8}
+              alt="turkey logo"
+            />
+          </Button> */}
 
-          <div className="sm:hidden min-w-[90px] space-x-1 flex flex-row">
+          <SocialMediaNav className={"ml-auto hidden sm:flex"} />
+
+          <div className="w-10 h-10">
             <ModeToggle />
+          </div>
 
+          <div className="sm:hidden space-x-1 flex flex-row">
             <Button
               variant="outline"
               onClick={() => SetNavbarOpen((s) => !s)}
@@ -76,11 +92,11 @@ export default function Header() {
           </div>
         </div>
         <div
-          className="sm:hidden absolute w-full bg-white dark:bg-black py-2"
+          className="sm:hidden absolute w-full bg-white dark:bg-black border-y"
           id="mobile-menu"
           style={{ display: !navbarOpen ? "none" : "" }}
         >
-          <div className="px-2 py-1 w-auto space-x-0.5">
+          <div className="px-2 w-auto space-x-0.5">
             <div
               className={`${
                 pathname === "/"
