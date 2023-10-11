@@ -34,7 +34,7 @@ export default function ContactForm() {
                     });
                     setTimeout(() => {
                         SetSuccess(null);
-                    }, 3000);
+                    }, 5000);
                 } else {
                     SetSuccess(false);
                     SetLoading(false);
