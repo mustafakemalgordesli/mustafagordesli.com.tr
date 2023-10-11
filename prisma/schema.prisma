@@ -16,6 +16,15 @@ model User {
   name     String?
   password String
   projects Project[]
+  Token    Token?
+}
+
+model Token {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  token     String   @unique
+  createdAt DateTime
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String   @unique @db.ObjectId
 }
 
 model Project {
