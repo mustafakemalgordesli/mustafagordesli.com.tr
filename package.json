@@ -27,6 +27,7 @@
         "nodemailer": "^6.9.5",
         "react": "^18",
         "react-dom": "^18",
+        "react-google-recaptcha-v3": "^1.10.1",
         "sharp": "^0.32.6",
         "tailwind-merge": "^1.14.0",
         "tailwindcss-animate": "^1.0.7",
