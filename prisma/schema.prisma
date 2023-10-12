@@ -32,7 +32,7 @@ model Project {
   title     String
   content   String?
   imageUrl  String?
-  published Boolean          @default(false)
+  published Boolean          @default(true)
   user      User             @relation(fields: [userId], references: [id])
   userId    String           @db.ObjectId
   hastags   ProjectHashtag[]
@@ -42,7 +42,7 @@ model ProjectHashtag {
   id        String  @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   content   String?
-  published Boolean @default(false)
+  published Boolean @default(true)
   project   Project @relation(fields: [projectId], references: [id])
   projectId String  @db.ObjectId
 }
