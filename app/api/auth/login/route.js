@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import next from "@/lib/next"
 import crypto from "crypto"
 import { z } from "zod";
+import { v4 as uuidv4 } from 'uuid';
 
 const loginSchema = z.object({
     email: z.string()
@@ -45,7 +46,7 @@ export async function POST(req) {
 
             const token = await prisma.token.create({
                 data: {
-                    token: crypto.randomBytes(64).toString('hex'),
+                    token: uuidv4() + crypto.randomBytes(32).toString('hex'),
                     createdAt: new Date(),
                     userId: user.id
                 }
