@@ -11,7 +11,7 @@ export default function About() {
                 early stages of mastering the English language, I am dedicated
                 to the learning process. My current focus lies in full stack web
                 development, where I utilize technologies such as C#, .NET Core,
-                JavaScript, Nextjs and SQL Server. I predominantly craft my
+                JavaScript, Next.js and SQL Server. I predominantly craft my
                 projects using the powerful combination of .NET and React.
             </p>
             <div className="gap-3 flex flex-col sm:flex-row">
