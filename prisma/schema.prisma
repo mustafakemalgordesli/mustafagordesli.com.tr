@@ -23,7 +23,7 @@ model Token {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   token     String   @unique
   createdAt DateTime
-  user      User     @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String   @unique @db.ObjectId
 }
 
@@ -31,9 +31,9 @@ model Project {
   id        String           @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   content   String?
-  imageUrl  String?
+  imageUrl  String           @default("")
   published Boolean          @default(true)
-  user      User             @relation(fields: [userId], references: [id])
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String           @db.ObjectId
   hastags   ProjectHashtag[]
 }
@@ -43,6 +43,6 @@ model ProjectHashtag {
   title     String
   content   String?
   published Boolean @default(true)
-  project   Project @relation(fields: [projectId], references: [id])
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
   projectId String  @db.ObjectId
 }

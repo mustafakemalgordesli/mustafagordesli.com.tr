@@ -12,15 +12,15 @@ const createSchema = z.object({
 
 export const POST = async (req) => {
     try {
-        const user = await authenticate(req)
-        if (!user) return next({ statusCode: httpStatus.BAD_REQUEST, message: "Invalid token or expired" });
+        const userId = await authenticate(req)
+        if (!userId) return next({ statusCode: httpStatus.BAD_REQUEST, message: "Invalid token or expired" });
 
         const body = await req.json()
 
         const isValidData = createSchema.parse(body)
 
         const project = await prisma.project.create({
-            data: isValidData
+            data: { ...isValidData, userId }
         })
 
         return NextResponse.json({ success: true, project: project }, { status: httpStatus.OK })

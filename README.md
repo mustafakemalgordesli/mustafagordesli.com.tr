@@ -17,7 +17,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Libraries used
 
--   aws-sdk
+-   @aws-sdk/client-s3
 -   nodemailer
 -   next-themes
 -   use-immer
@@ -41,6 +41,7 @@ NEXT_PUBLIC_CAPTHA_SECRET="<GOOGLE CAPTHA SECRET KEY>"
 AWS_ACCESS_KEY_ID="<AWS ACCESS KEY ID>"
 AWS_SECRET_ACCESS_KEY="<AWS SECRET KEY ID>"
 BUCKET_NAME="<AWS S3 BUCKET NAME>"
+AWS_REGION="<AWS REGION>"
 ```
 
 ## Getting Started
