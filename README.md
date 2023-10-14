@@ -1,4 +1,47 @@
+# My personel portfolio site
+
+### Live: https://mustafagordesli.com.tr
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Tools used
+
+-   Nextjs
+-   React
+-   Tailwind
+-   shadcn/ui
+-   Radix Icons
+-   Prisma
+-   MongoDB
+-   AWS S3
+
+## Libraries used
+
+-   aws-sdk
+-   nodemailer
+-   next-themes
+-   use-immer
+-   zod
+-   uuid
+-   bcrypt
+-   axios
+-   @prisma/client
+
+## ENV
+
+```bash
+DATABASE_URL="<DATABASE URL>"
+MAIL_HOST="<MAIL SMTP HOST URL>"
+MAIL_PORT=587 #MAIL PORT
+MAIL_USER="<example@mail.com>"
+MAIL_PASS="<MAIL PASSWORD OR SMTP KEY>"
+MAIL_SERVICE="<YOUR MAIL SERVICE>" # example: gmail
+NEXT_PUBLIC_CAPTHA="<GOOGLE CAPTHA PUBLIC KEY>"
+NEXT_PUBLIC_CAPTHA_SECRET="<GOOGLE CAPTHA SECRET KEY>"
+AWS_ACCESS_KEY_ID="<AWS ACCESS KEY ID>"
+AWS_SECRET_ACCESS_KEY="<AWS SECRET KEY ID>"
+BUCKET_NAME="<AWS S3 BUCKET NAME>"
+```
 
 ## Getting Started
 
@@ -43,4 +86,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
