@@ -42,6 +42,7 @@ AWS_ACCESS_KEY_ID="<AWS ACCESS KEY ID>"
 AWS_SECRET_ACCESS_KEY="<AWS SECRET KEY ID>"
 BUCKET_NAME="<AWS S3 BUCKET NAME>"
 AWS_REGION="<AWS REGION>"
+AWS_BUCKET_URL="<AWS BUCKET URL>" #exapmle: https://<bucket_name>.s3.eu-central-1.amazonaws.com/
 ```
 
 ## Getting Started

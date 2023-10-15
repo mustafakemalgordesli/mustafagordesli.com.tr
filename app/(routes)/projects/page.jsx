@@ -1,8 +1,13 @@
 import Image from 'next/image';
 
 export default async function Projects() {
+    // await new Promise((resolve) => setTimeout(() => resolve(true), 5000));
     return (
         <>
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
             <ProjectCard />
             <ProjectCard />
         </>
@@ -11,20 +16,6 @@ export default async function Projects() {
 
 const ProjectCard = () => {
     return (
-        // <div className="bg-primary grid grid-cols-2  sm:grid-cols-1  md:grid-cols-2">
-        //   <div className="w-[200px] h-[200px] sm:w-full sm:h-[300px] md:w-[200px] md:h-[200px] relative">
-        //     <Image src="/news.jpeg" alt="news foto" fill={true} />
-        //   </div>
-        //   <div className="px-1">
-        //     <h3>Python Malware</h3>
-        //     <p>
-        //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, nemo?
-        //       Consequatur ut neque atque voluptate, inventore corporis voluptas iste
-        //       corrupti.
-        //     </p>
-        //   </div>
-        // </div>
-
         <div className="max-w-sm mx-auto rounded overflow-hidden shadow-lg dark:shadow-none border border-white">
             <div className="h-[250px] w-full relative">
                 <Image
