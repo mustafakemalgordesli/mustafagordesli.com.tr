@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <main className="max-w-screen-xl h-screen pt-14 mx-auto">
       <div className="flex flex-col sm:flex-row justify-start items-center sm:justify-center h-full w-full gap-2">
-        <div className="relative sm:mt-0 w-[225px] h-[250px] sm:w-[250px] sm:h-[300px] lg:w-[300px] lg:h-[360px] xl:w-[350px] xl:h-[420px] aspect-[6/5] m-4">
+        <div className="relative sm:mt-0 w-[225px] h-[225px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px] aspect-square m-4">
           <Image
             src="/profile.jpg"
-            className="rounded-xl shadow-2xl"
+            className="rounded-full shadow-2xl"
             fill={true}
             alt="Picture of the author"
           />
