@@ -44,8 +44,15 @@ export async function POST(req) {
         if (match) {
             user.password = undefined;
 
-            const token = await prisma.token.create({
-                data: {
+            const token = await prisma.token.upsert({
+                where: {
+                    userId: user.id
+                },
+                update: {
+                    token: uuidv4() + crypto.randomBytes(32).toString('hex'),
+                    createdAt: new Date()
+                },
+                create: {
                     token: uuidv4() + crypto.randomBytes(32).toString('hex'),
                     createdAt: new Date(),
                     userId: user.id
@@ -53,8 +60,9 @@ export async function POST(req) {
             })
 
             if (!token) return NextResponse.json({
-                success: false
-            })
+                success: true,
+                data: user,
+            }, { status: 200 });
 
             const response = NextResponse.json({
                 success: true,

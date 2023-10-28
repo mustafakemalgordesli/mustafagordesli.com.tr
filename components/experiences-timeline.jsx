@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ExperiencesTimeline() {
     return (
-        <div className="w-full md:w-1/2 flex flex-col mx-auto md:mx-0 md:items-start md:justify-start md:pr-2">
+        <div className="w-full md:w-1/2 flex flex-col mx-auto md:mx-0 md:items-start md:justify-start md:pr-2 border-b pb-5 md:pb-0 md:border-0">
             <h2 className="font-medium text-2xl mb-2 ml-4">EXPERIENCES</h2>
             <ol className="relative border-l border-gray-200 dark:border-gray-700">
                 <li className="mb-4 ml-4">

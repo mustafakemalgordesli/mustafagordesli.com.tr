@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Pixelify_Sans } from "next/font/google"
+import { notFound } from "next/navigation"
 
 const pixelify = Pixelify_Sans({
   weight: '500',
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <main className="max-w-screen-xl h-screen pt-14 mx-auto">
       <div className="flex flex-col sm:flex-row justify-start items-center sm:justify-center h-full w-full gap-2">
-        <div className="relative sm:mt-0 w-[225px] h-[225px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px] aspect-square m-4">
+        <div className="relative sm:mt-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px] aspect-square m-4">
           <Image
             src="/profile.jpg"
             className="rounded-full shadow-2xl"
