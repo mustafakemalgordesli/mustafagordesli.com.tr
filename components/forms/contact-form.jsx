@@ -6,17 +6,11 @@ import axios from 'axios';
 import { useImmer } from 'use-immer';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { ExclamationTriangleIcon, CheckIcon } from '@radix-ui/react-icons';
-import {
-    GoogleReCaptchaProvider,
-    GoogleReCaptcha,
-} from 'react-google-recaptcha-v3';
 
 export default function ContactForm() {
     const [isLoading, SetLoading] = useState(false);
 
     const [isSuccess, SetSuccess] = useState(null);
-
-    const [token, setToken] = useState();
 
     const [data, updateData] = useImmer({
         title: '',
@@ -142,13 +136,6 @@ export default function ContactForm() {
                     </Alert>
                 )}
             </form>
-            <GoogleReCaptchaProvider reCaptchaKey="6LepPpMoAAAAACJpRwkIz5wlEZ7EolHUtjKdl7a-">
-                <GoogleReCaptcha
-                    onVerify={(token) => {
-                        setToken(token);
-                    }}
-                />
-            </GoogleReCaptchaProvider>
         </>
     );
 }

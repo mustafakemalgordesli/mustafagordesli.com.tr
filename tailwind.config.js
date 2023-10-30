@@ -55,7 +55,8 @@ module.exports = {
         },
       },
       boxShadow: {
-        "dark": "var(--tw-ring-offset-shadow, 0 0 #fff), var(--tw-ring-shadow, 0 0 #fff), var(--tw-shadow);"
+        "dark": "var(--tw-ring-offset-shadow, 0 0 #fff), var(--tw-ring-shadow, 0 0 #fff), var(--tw-shadow);",
+        "blue": '0 1px 3px 0 rgba(0, 0, 255, 0.1), 0 1px 2px 0 rgba(0, 0, 255, 0.06)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -77,6 +78,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+  },
+  variants: {
+    // Control the shadows on dark mode to invert colors
+    boxShadow: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus', 'dark'],
   },
   plugins: [require("tailwindcss-animate")],
 }
