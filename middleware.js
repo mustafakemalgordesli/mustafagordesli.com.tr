@@ -69,7 +69,7 @@ export async function middleware(req) {
 
 export const config = {
     matcher: [
-        "/dashboard",
+        // "/dashboard",
         "/login"
         // '/api/users/getbytoken',
         // '/api/users/update/:path*',

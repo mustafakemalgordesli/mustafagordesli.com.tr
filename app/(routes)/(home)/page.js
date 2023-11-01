@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Pixelify_Sans } from "next/font/google"
-import { notFound } from "next/navigation"
+import Link from "next/link"
 
 const pixelify = Pixelify_Sans({
   weight: '500',
@@ -27,7 +27,7 @@ export default function Home() {
             I&apos;m the <span>Software Developer</span>
           </div>
           <div>
-            <a href="/about" className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg">Know more</a>
+            <Link href="/about" className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg">Know more</Link>
           </div>
         </div>
       </div>

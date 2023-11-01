@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function About() {
     return (
         <main className="max-w-screen-xl h-screen py-14 mx-auto flex flex-col items-center sm:justify-center gap-2 mt-14 sm:my-0">
@@ -15,12 +17,12 @@ export default function About() {
                 projects using the powerful combination of .NET and React.
             </p>
             <div className="gap-3 flex flex-col sm:flex-row">
-                <a
+                <Link
                     href="/resume"
                     className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg"
                 >
                     View Resume
-                </a>
+                </Link>
                 <a
                     href="/mustafa-gordesli-cv.pdf"
                     download="mustafa-gordesli-cv"
