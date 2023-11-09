@@ -21,7 +21,7 @@ export default function SocialMediaNav({ className }) {
                 <GitHubLogoIcon className="h-icon w-icon" />
             </Link>
             <Link
-                href="mailto:m.kemalgordesli@gmail.com?body=My mail adress"
+                href="mailto:me@mustafagordesli.com.tr?body=My mail adress"
                 target="_blank"
                 rel="noreferrer"
                 className="flex justify-center items-center h-[2.5rem] w-[2.5rem] bg-background hover:bg-accent hover:text-accent-foreground rounded"
