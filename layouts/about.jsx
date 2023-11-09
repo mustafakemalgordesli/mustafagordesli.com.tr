@@ -2,11 +2,14 @@ import Link from 'next/link';
 
 export default function About() {
     return (
-        <main className="max-w-screen-xl h-screen py-14 mx-auto flex flex-col items-center sm:justify-center gap-2 mt-14 sm:my-0">
+        <section
+            id="about"
+            className="max-w-screen-xl h-screen py-14 mx-auto flex flex-col items-center sm:justify-center gap-2 sm:my-0"
+        >
             <div className="text-4xl font-bold text-center">
                 About <span className="text-primary">ME</span>
             </div>
-            <p className="text-gray-600 antialiased text-xl font-light max-w-xl tracking-wider leading-8 dark:text-slate-100">
+            <p className="text-gray-600 antialiased text-xl font-light max-w-xl tracking-wider leading-8 dark:text-slate-100 px-2">
                 I am a fourth-year computer engineering student at Balıkesir
                 University, driven by an investigative mindset and a strong
                 commitment to continuous improvement. While I am still in the
@@ -18,7 +21,7 @@ export default function About() {
             </p>
             <div className="gap-3 flex flex-col sm:flex-row">
                 <Link
-                    href="/resume"
+                    href="#resume"
                     className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg"
                 >
                     View Resume
@@ -31,6 +34,6 @@ export default function About() {
                     Download CV
                 </a>
             </div>
-        </main>
+        </section>
     );
 }

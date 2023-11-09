@@ -54,7 +54,7 @@ export default function ContactForm() {
 
     return (
         <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="p-2 sm:p-8 md:p-12">
                 <div className="mb-4">
                     <input
                         type="text"

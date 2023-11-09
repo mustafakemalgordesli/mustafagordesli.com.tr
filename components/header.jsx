@@ -64,13 +64,14 @@ export default function Header() {
             />
           </Button> */}
 
-                    <SocialMediaNav className={'ml-auto hidden sm:flex'} />
+                    {/* <SocialMediaNav className={'ml-auto hidden sm:flex'} /> */}
+                    <SocialMediaNav className={'ml-auto flex'} />
 
                     <div className="w-10 h-10">
                         <ModeToggle />
                     </div>
 
-                    <div className="sm:hidden space-x-1 flex flex-row">
+                    {/* <div className="sm:hidden space-x-1 flex flex-row">
                         <Button
                             variant="outline"
                             onClick={() => SetNavbarOpen((s) => !s)}
@@ -97,11 +98,11 @@ export default function Header() {
                                 </svg>
                             </div>
                         </Button>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* mobile screen navbar */}
-                <div
+                {/* <div
                     className="sm:hidden absolute w-full bg-white dark:bg-black border-y"
                     id="mobile-menu"
                     style={{ display: !navbarOpen ? 'none' : '' }}
@@ -182,11 +183,10 @@ export default function Header() {
                                 }`}
                             />
                         </div>
-                        {/* <div className="block rounded-md text-base font-medium"> */}
-                        <SocialMediaNav className="flex flex-row ml-0 mr-auto space-x-1 px-3 mt-0" />
-                        {/* </div> */}
+
+                     <SocialMediaNav className="flex flex-row ml-0 mr-auto space-x-1 px-3 mt-0" />
                     </div>
-                </div>
+                </div> */}
             </header>
         </>
     );
@@ -210,7 +210,7 @@ const AboutLink = ({ pathname = '', className = '' }) => (
                 ? 'text-foreground'
                 : 'text-foreground/60'
         } ${className}`}
-        href="/about"
+        href="#about"
     >
         About
     </Link>
@@ -223,7 +223,7 @@ const ResumeLink = ({ pathname = '', className = '' }) => (
                 ? 'text-foreground'
                 : 'text-foreground/60'
         } ${className}`}
-        href="/resume"
+        href="#resume"
     >
         Resume
     </Link>
@@ -236,7 +236,7 @@ const ProjectLink = ({ pathname = '', className = '' }) => (
                 ? 'text-foreground'
                 : 'text-foreground/60'
         } ${className}`}
-        href="/projects"
+        href="#projects"
     >
         Projects
     </Link>
@@ -247,7 +247,7 @@ const ContactLink = ({ pathname = '', className = '' }) => (
         className={` block transition-colors hover:text-foreground/80 p-2 sm:p-0 text-foreground${
             pathname.startsWith('/contact') ? '' : '/60'
         } ${className}`}
-        href="/contact"
+        href="#contact"
     >
         Contact
     </Link>
