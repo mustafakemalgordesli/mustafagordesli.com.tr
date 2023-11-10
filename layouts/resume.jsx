@@ -1,6 +1,7 @@
 import ExperiencesTimeline from '@/components/experiences-timeline';
 import EducationTimeline from '@/components/education-timeline';
 import Link from 'next/link';
+import ViewProjectsBtn from '@/components/buttons/ViewProjectsBtn';
 
 export default function Resume() {
     return (
@@ -16,12 +17,7 @@ export default function Resume() {
                 <EducationTimeline />
             </div>
             <div className="w-full flex justify-center items-center mb-auto">
-                <Link
-                    href="#projects"
-                    className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg"
-                >
-                    View Projects
-                </Link>
+                <ViewProjectsBtn />
             </div>
         </section>
     );

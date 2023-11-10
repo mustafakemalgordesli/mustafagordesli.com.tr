@@ -4,10 +4,11 @@ import Contact from "@/layouts/contact"
 import About from "@/layouts/about"
 import Resume from "@/layouts/resume"
 import Projects from "@/layouts/projects"
+import ScroolContent from "@/components/scrool-content";
 
 export default function Page() {
   return (
-    <main className="w-full h-full">
+    <ScroolContent>
       <HomeLayout />
 
       <About />
@@ -17,6 +18,6 @@ export default function Page() {
       <Projects />
 
       <Contact />
-    </main>
+    </ScroolContent>
   )
 }

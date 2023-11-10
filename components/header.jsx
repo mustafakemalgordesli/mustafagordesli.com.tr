@@ -8,13 +8,23 @@ import SocialMediaNav from './social-media-nav';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import Image from 'next/image';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateState } from '@/lib/update-menu-state';
+import { selectMenuState } from '@/store/menu-store';
 
 export default function Header() {
-    const pathname = usePathname();
+    const dispatch = useDispatch();
+
+    const activeMenu = useSelector(selectMenuState);
+
     const [navbarOpen, SetNavbarOpen] = useState(false);
+
     useEffect(() => {
         SetNavbarOpen(false);
-    }, [pathname]);
+    }, [activeMenu]);
+
+    const changeActiveMenu = () => updateState(dispatch);
+
     return (
         <>
             <header className="supports-backdrop-blur:bg-background/60 fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
@@ -22,31 +32,41 @@ export default function Header() {
                     className={`container flex h-14
          sm:h-14 items-center max-w-screen-xl`}
                 >
-                    <div className="mr-auto w-[170px]">
-                        <Link href="/" className="w-full font-bold">
-                            <span className="sm:hidden">M. K. G.</span>
-                            <span className="hidden sm:block">
-                                Mustafa K. Gordesli
-                            </span>
-                        </Link>
+                    <div className="sm:w-[172px] w-[160px]">
+                        <LogoLink changeActiveMenu={changeActiveMenu} />
                     </div>
 
-                    <nav className="items-center flex w-full sm:w-auto sm:flex sm:space-x-6 text-sm font-medium">
+                    <nav className="items-center sm:ml-auto flex w-full sm:w-auto sm:flex sm:space-x-6 text-sm font-medium">
                         <ul className="hidden sm:flex sm:mt-0 sm:flex-row sm:space-x-2 md:space-x-4 lg:space-x-6 xl:space-x-8">
                             <li>
-                                <HomeLink pathname={pathname} />
+                                <HomeLink
+                                    activeMenu={activeMenu}
+                                    changeActiveMenu={changeActiveMenu}
+                                />
                             </li>
                             <li>
-                                <AboutLink pathname={pathname} />
+                                <AboutLink
+                                    activeMenu={activeMenu}
+                                    changeActiveMenu={changeActiveMenu}
+                                />
                             </li>
                             <li>
-                                <ResumeLink pathname={pathname} />
+                                <ResumeLink
+                                    activeMenu={activeMenu}
+                                    changeActiveMenu={changeActiveMenu}
+                                />
                             </li>
                             <li>
-                                <ProjectLink pathname={pathname} />
+                                <ProjectLink
+                                    activeMenu={activeMenu}
+                                    changeActiveMenu={changeActiveMenu}
+                                />
                             </li>
                             <li>
-                                <ContactLink pathname={pathname} />
+                                <ContactLink
+                                    activeMenu={activeMenu}
+                                    changeActiveMenu={changeActiveMenu}
+                                />
                             </li>
                         </ul>
                     </nav>
@@ -65,11 +85,11 @@ export default function Header() {
           </Button> */}
 
                     {/* <SocialMediaNav className={'ml-auto hidden sm:flex'} /> */}
-                    <SocialMediaNav className={'ml-auto flex'} />
+                    <SocialMediaNav className={'sm:ml-auto flex'} />
 
-                    <div className="w-10 h-10">
+                    {/* <div className="w-10 h-10">
                         <ModeToggle />
-                    </div>
+                    </div> */}
 
                     {/* <div className="sm:hidden space-x-1 flex flex-row">
                         <Button
@@ -192,62 +212,78 @@ export default function Header() {
     );
 }
 
-const HomeLink = ({ pathname = '', className = '' }) => (
+function LogoLink({ changeActiveMenu }) {
+    return (
+        <Link
+            href="#home"
+            className="w-full font-bold text-center"
+            onClick={() => {
+                changeActiveMenu();
+            }}
+            scrollsmooth
+        >
+            <div className="sm:hidden w-[65px]">M. K. G.</div>
+            <span className="hidden sm:block">Mustafa K. Gordesli</span>
+        </Link>
+    );
+}
+
+const HomeLink = ({ activeMenu = '', className = '', changeActiveMenu }) => (
     <Link
         className={`block transition-colors hover:text-foreground/80 p-2 sm:p-0 ${
-            pathname === '/' ? 'text-foreground' : 'text-foreground/60'
+            activeMenu == '#home' ? 'text-foreground' : 'text-foreground/60'
         } ${className}`}
-        href="/"
+        onClick={changeActiveMenu}
+        href="#home"
+        scrollsmooth
     >
         Home
     </Link>
 );
 
-const AboutLink = ({ pathname = '', className = '' }) => (
+const AboutLink = ({ activeMenu = '', className = '', changeActiveMenu }) => (
     <Link
         className={`block transition-colors hover:text-foreground/80 p-2 sm:p-0 ${
-            pathname.startsWith('/about')
-                ? 'text-foreground'
-                : 'text-foreground/60'
+            activeMenu == '#about' ? 'text-foreground' : 'text-foreground/60'
         } ${className}`}
+        onClick={changeActiveMenu}
         href="#about"
     >
         About
     </Link>
 );
 
-const ResumeLink = ({ pathname = '', className = '' }) => (
+const ResumeLink = ({ activeMenu = '', className = '', changeActiveMenu }) => (
     <Link
         className={`block transition-colors hover:text-foreground/80 p-2 sm:p-0 ${
-            pathname.startsWith('/resume')
-                ? 'text-foreground'
-                : 'text-foreground/60'
+            activeMenu == '#resume' ? 'text-foreground' : 'text-foreground/60'
         } ${className}`}
+        onClick={changeActiveMenu}
         href="#resume"
     >
         Resume
     </Link>
 );
 
-const ProjectLink = ({ pathname = '', className = '' }) => (
+const ProjectLink = ({ activeMenu = '', className = '', changeActiveMenu }) => (
     <Link
         className={`block transition-colors hover:text-foreground/80 p-2 sm:p-0 ${
-            pathname.startsWith('/projects')
-                ? 'text-foreground'
-                : 'text-foreground/60'
+            activeMenu == '#projects' ? 'text-foreground' : 'text-foreground/60'
         } ${className}`}
         href="#projects"
+        onClick={changeActiveMenu}
     >
         Projects
     </Link>
 );
 
-const ContactLink = ({ pathname = '', className = '' }) => (
+const ContactLink = ({ activeMenu = '', className = '', changeActiveMenu }) => (
     <Link
         className={` block transition-colors hover:text-foreground/80 p-2 sm:p-0 text-foreground${
-            pathname.startsWith('/contact') ? '' : '/60'
+            activeMenu == '#contact' ? '' : '/60'
         } ${className}`}
         href="#contact"
+        onClick={changeActiveMenu}
     >
         Contact
     </Link>

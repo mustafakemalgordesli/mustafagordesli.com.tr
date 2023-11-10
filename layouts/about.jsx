@@ -1,10 +1,11 @@
+import ViewResumeBtn from '@/components/buttons/ViewResumeBtn';
 import Link from 'next/link';
 
 export default function About() {
     return (
         <section
             id="about"
-            className="max-w-screen-xl h-screen py-14 mx-auto flex flex-col items-center sm:justify-center gap-2 sm:my-0"
+            className="max-w-screen-xl min-h-screen py-14 mx-auto flex flex-col items-center sm:justify-center gap-2 sm:my-0"
         >
             <div className="text-4xl font-bold text-center">
                 About <span className="text-primary">ME</span>
@@ -20,12 +21,7 @@ export default function About() {
                 projects using the powerful combination of .NET and React.
             </p>
             <div className="gap-3 flex flex-col sm:flex-row">
-                <Link
-                    href="#resume"
-                    className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg"
-                >
-                    View Resume
-                </Link>
+                <ViewResumeBtn />
                 <a
                     href="/mustafa-gordesli-cv.pdf"
                     download="mustafa-gordesli-cv"

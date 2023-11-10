@@ -1,4 +1,6 @@
+import ContactMeBtn from '@/components/buttons/ContactMeBtn';
 import ProjectList from '@/components/project-list';
+import Link from 'next/link';
 
 export default function Projects() {
     return (
@@ -14,12 +16,7 @@ export default function Projects() {
                     <ProjectList />
                 </div>
                 <div className="w-full flex items-center justify-center mb-auto">
-                    <a
-                        href="#contact"
-                        className="py-2 px-10 bg-transparent border border-primary text-primary hover:text-white hover:bg-primary  transition-all transform duration-300 font-medium text-lg"
-                    >
-                        Contact me
-                    </a>
+                    <ContactMeBtn />
                 </div>
             </section>
         </>
