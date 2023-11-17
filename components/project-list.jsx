@@ -3,11 +3,14 @@
 import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const staticProjects = [
     {
         id: 1,
         imageUrl: '/char-counter.png',
+        sourceCode: 'https://github.com/mustafakemalgordesli/char-counter',
+        liveUrl: 'https://mustafakemalgordesli.github.io/char-counter/',
         title: 'Character Counter',
         content:
             'About This word and character counter plugin developed using Html Dom allows you to count characters or words up or down.',
@@ -36,6 +39,8 @@ const staticProjects = [
         id: 2,
         imageUrl: '/malware-header.jpg',
         title: 'Python Malware',
+        sourceCode: 'https://github.com/mustafakemalgordesli/python-malware',
+        liveUrl: '',
         content:
             'This project was developed for python training purposes and was prepared to examine how malware analysis can be done.',
         hastags: [
@@ -119,7 +124,7 @@ const ProjectCard = ({ project }) => {
                     {project.content}
                 </p>
             </div>
-            <div className="px-6 pt-4 pb-2">
+            <div className="px-6 pb-2">
                 {project.hastags.map((element) => (
                     <span
                         key={element.id}
@@ -128,6 +133,29 @@ const ProjectCard = ({ project }) => {
                         #{element.title}
                     </span>
                 ))}
+            </div>
+            <div className="px-6 min-h-[56px] pt-1 pb-4 flex items-center gap-3">
+                {project?.liveUrl && (
+                    <Link
+                        href={project?.liveUrl}
+                        target="_blank"
+                        class="relative items-center justify-start inline-block px-5 py-2 overflow-hidden duration-500 text-sm font-semibold group"
+                    >
+                        <span class=" duration-500  translate-x-12 -translate-y-2 absolute left-0 top-0 bg-primary opacity-[3%]"></span>
+                        <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out -translate-x-56 -translate-y-24 bg-primary opacity-100 group-hover:-translate-x-8"></span>
+                        <span class="relative w-full text-left text-primary transition-colors duration-1000 ease-in-out group-hover:text-white dark:group-hover:text-gray-900">
+                            See Live
+                        </span>
+                        <span class="absolute duration-500 inset-0 border border-primary"></span>
+                    </Link>
+                )}
+                {project?.sourceCode && (
+                    <Link target="_blank" href={project.sourceCode}>
+                        <p className="hover:translate-x-1 ease-in transition-all duration-300 text-primary text-sm font-semibold">
+                            Source Code
+                        </p>
+                    </Link>
+                )}
             </div>
         </div>
     );

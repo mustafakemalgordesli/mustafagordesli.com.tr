@@ -10,10 +10,10 @@ export default function Contact() {
                 <div className="w-full px-2 sm:px-4 lg:w-1/2 xl:w-6/12">
                     <div className="mb-12 max-w-[570px] lg:mb-0">
                         <span className="text-primary mb-2 block text-base font-semibold">
-                            Contact Us
+                            Contact
                         </span>
                         <h2 className="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                            GET IN TOUCH WITH US
+                            GET IN TOUCH WITH ME
                         </h2>
                         {/* <p className="text-body-color mb-9 text-base leading-relaxed">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
