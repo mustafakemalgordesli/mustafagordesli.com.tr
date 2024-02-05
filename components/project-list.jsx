@@ -4,67 +4,7 @@ import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useState } from 'react';
 import Link from 'next/link';
-
-const staticProjects = [
-    {
-        id: 1,
-        imageUrl: '/char-counter.png',
-        sourceCode: 'https://github.com/mustafakemalgordesli/char-counter',
-        liveUrl: 'https://mustafakemalgordesli.github.io/char-counter/',
-        title: 'Character Counter',
-        content:
-            'About This word and character counter plugin developed using Html Dom allows you to count characters or words up or down.',
-        hastags: [
-            {
-                id: 4,
-                title: 'Html5',
-                published: true,
-                projectId: 1,
-            },
-            {
-                id: 5,
-                title: 'Css3',
-                published: true,
-                projectId: 1,
-            },
-            {
-                id: 6,
-                title: 'JavaScript',
-                published: true,
-                projectId: 1,
-            },
-        ],
-    },
-    {
-        id: 2,
-        imageUrl: '/malware-header.jpg',
-        title: 'Python Malware',
-        sourceCode: 'https://github.com/mustafakemalgordesli/python-malware',
-        liveUrl: '',
-        content:
-            'This project was developed for python training purposes and was prepared to examine how malware analysis can be done.',
-        hastags: [
-            {
-                id: 1,
-                title: 'Python',
-                published: true,
-                projectId: 2,
-            },
-            {
-                id: 2,
-                title: 'Keylogger',
-                published: true,
-                projectId: 2,
-            },
-            {
-                id: 3,
-                title: 'Sqlite',
-                published: true,
-                projectId: 2,
-            },
-        ],
-    },
-];
+import { projects } from '@/lib/data';
 
 export default function ProjectList() {
     const [isLoading, SetLoading] = useState(false);
@@ -79,7 +19,7 @@ export default function ProjectList() {
                 </>
             ) : (
                 <>
-                    {staticProjects.map((element) => (
+                    {projects.map((element) => (
                         <ProjectCard project={element} key={element.id} />
                     ))}
                 </>
@@ -109,7 +49,7 @@ const ProjectCardLoading = () => {
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="max-w-sm mx-auto rounded overflow-hidden shadow-lg dark:shadow-none">
+        <div className="flex flex-col max-w-sm mx-auto rounded overflow-hidden shadow-lg dark:shadow-none">
             <div className="h-[250px] w-full relative">
                 <Image
                     className="w-full"
@@ -124,7 +64,7 @@ const ProjectCard = ({ project }) => {
                     {project.content}
                 </p>
             </div>
-            <div className="px-6 pb-2">
+            <div className="px-6 pb-2 mt-auto">
                 {project.hastags.map((element) => (
                     <span
                         key={element.id}
