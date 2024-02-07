@@ -16,7 +16,7 @@ export default function HomeLayout() {
             className="max-w-screen-xl min-h-screen pt-14 mx-auto flex items-center"
         >
             <div className="flex flex-col sm:flex-row justify-start items-center sm:justify-center w-full h-full gap-2">
-                <div className="relative sm:mt-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px] aspect-square m-4">
+                <div className="relative sm:mt-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] aspect-square m-4">
                     <Image
                         src="/profile.jpg"
                         className="rounded-full shadow-2xl"

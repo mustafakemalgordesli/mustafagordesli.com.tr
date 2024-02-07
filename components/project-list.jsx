@@ -5,12 +5,27 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useState } from 'react';
 import Link from 'next/link';
 import { projects } from '@/lib/data';
+import { motion } from 'framer-motion';
+
+const fadeInAnimationVariants = {
+    initial: {
+        opacity: 0,
+        y: 100,
+    },
+    animate: (index) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 0.05 * index,
+        },
+    }),
+};
 
 export default function ProjectList() {
     const [isLoading, SetLoading] = useState(false);
 
     return (
-        <>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mx-auto sm:mb-2 lg:mb-4">
             {isLoading ? (
                 <>
                     <ProjectCardLoading />
@@ -24,13 +39,13 @@ export default function ProjectList() {
                     ))}
                 </>
             )}
-        </>
+        </ul>
     );
 }
 
 const ProjectCardLoading = () => {
     return (
-        <div className="w-[380px] h-[475px] mx-auto rounded overflow-hidden shadow-lg dark:shadow-none">
+        <li className="w-[380px] h-[475px] mx-auto rounded overflow-hidden shadow-lg dark:shadow-none">
             <Skeleton className="h-[250px] w-full mb-4" />
 
             <div className="flex flex-col px-6 pt-2 pb-4">
@@ -43,13 +58,22 @@ const ProjectCardLoading = () => {
                 <Skeleton className="rounded-full h-7 w-20" />
                 <Skeleton className="rounded-full h-7 w-20" />
             </div>
-        </div>
+        </li>
     );
 };
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="flex flex-col max-w-sm mx-auto rounded overflow-hidden shadow-lg dark:shadow-none">
+        <motion.li
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+                once: true,
+            }}
+            custom={project.id}
+            className="flex flex-col max-w-sm mx-auto rounded overflow-hidden shadow-lg dark:shadow-none"
+        >
             <div className="h-[250px] w-full relative">
                 <Image
                     className="w-full"
@@ -79,14 +103,14 @@ const ProjectCard = ({ project }) => {
                     <Link
                         href={project?.liveUrl}
                         target="_blank"
-                        class="relative items-center justify-start inline-block px-5 py-2 overflow-hidden duration-500 text-sm font-semibold group"
+                        className="relative items-center justify-start inline-block px-5 py-2 overflow-hidden duration-500 text-sm font-semibold group"
                     >
-                        <span class=" duration-500  translate-x-12 -translate-y-2 absolute left-0 top-0 bg-primary opacity-[3%]"></span>
-                        <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out -translate-x-56 -translate-y-24 bg-primary opacity-100 group-hover:-translate-x-8"></span>
-                        <span class="relative w-full text-left text-primary transition-colors duration-1000 ease-in-out group-hover:text-white dark:group-hover:text-gray-900">
+                        <span className=" duration-500  translate-x-12 -translate-y-2 absolute left-0 top-0 bg-primary opacity-[3%]"></span>
+                        <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out -translate-x-56 -translate-y-24 bg-primary opacity-100 group-hover:-translate-x-8"></span>
+                        <span className="relative w-full text-left text-primary transition-colors duration-1000 ease-in-out group-hover:text-white dark:group-hover:text-gray-900">
                             See Live
                         </span>
-                        <span class="absolute duration-500 inset-0 border border-primary"></span>
+                        <span className="absolute duration-500 inset-0 border border-primary"></span>
                     </Link>
                 )}
                 {project?.sourceCode && (
@@ -97,6 +121,6 @@ const ProjectCard = ({ project }) => {
                     </Link>
                 )}
             </div>
-        </div>
+        </motion.li>
     );
 };
