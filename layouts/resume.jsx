@@ -12,7 +12,7 @@ export default function Resume() {
             <div className="text-4xl font-bold text-center mt-auto">
                 <span className="text-primary">Resume</span>
             </div>
-            <div className="w-full flex flex-col md:flex-row py-5 md:py-10">
+            <div className="w-full flex flex-col md:flex-row justify-around py-5 md:py-10">
                 <ExperiencesTimeline />
                 <EducationTimeline />
             </div>

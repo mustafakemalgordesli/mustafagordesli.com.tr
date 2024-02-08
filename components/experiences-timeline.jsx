@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ExperiencesTimeline() {
     return (
-        <div className="w-full md:w-1/2 flex flex-col mx-auto md:mx-0 md:items-start md:justify-start md:pr-2 border-b pb-5 md:pb-0 md:border-0">
+        <div className="max-w-md flex flex-col mx-auto md:mx-0 md:items-start md:justify-start md:pr-2 border-b pb-5 md:pb-0 md:border-0">
             <h2 className="font-medium text-2xl mb-2 px-2">EXPERIENCES</h2>
             <ol className="relative border-l border-gray-200 dark:border-gray-700">
                 <li className="mb-4 px-2">
@@ -23,9 +23,9 @@ export default function ExperiencesTimeline() {
                         Software Engineer Intern
                     </h5>
                     <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                        {/* Get access to over 20+ pages including a dashboard
-                        layout, charts, kanban board, calendar, and pre-order
-                        E-commerce & Marketing pages. */}
+                        Designed websites with Next.JS & TailwindCSS, making
+                        responsive designs and Python Django framework for
+                        Backend.
                     </p>
                 </li>
                 <li className="px-2">

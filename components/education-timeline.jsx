@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function EducationTimeline() {
     return (
-        <div className="w-full md:w-1/2 flex flex-col mt-5 md:mt-0 mx-auto md:mx-0 md:items-start md:justify-start md:pr-2">
+        <div className="max-w-md flex flex-col mt-5 md:mt-0 mx-auto md:mx-0 md:items-start md:justify-start md:pr-2">
             <h2 className="font-medium text-2xl mb-2 px-2">EDUCATION</h2>
             <ol className="relative border-l border-gray-200 dark:border-gray-700">
                 <li className="mb-4 px-2">
@@ -23,9 +23,10 @@ export default function EducationTimeline() {
                         Bachelor&apos;s degree, Computer Engineering
                     </h5>
                     <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                        {/* Get access to over 20+ pages including a dashboard
-                        layout, charts, kanban board, calendar, and pre-order
-                        E-commerce & Marketing pages. */}
+                        Currently pursuing a comprehensive curriculum in
+                        Computer Engineering, focusing on a wide range of
+                        technical subjects and skills essential for modern
+                        technology solutions.
                     </p>
                 </li>
                 <li className="px-2">
@@ -46,11 +47,6 @@ export default function EducationTimeline() {
                     <h5 className="font-medium text-base text-gray-700 dark:text-gray-300">
                         High School
                     </h5>
-                    {/* <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                        All of the pages and components are first designed in
-                        Figma and we keep a parity between the two versions even
-                        as we update the project.
-                    </p> */}
                 </li>
             </ol>
         </div>
