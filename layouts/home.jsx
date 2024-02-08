@@ -1,7 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import { Pixelify_Sans } from 'next/font/google';
-import Link from 'next/link';
 import KnowMoreBtn from '@/components/buttons/KnowMoreBtn';
+import { motion } from 'framer-motion';
 
 const pixelify = Pixelify_Sans({
     weight: '500',
@@ -11,7 +13,10 @@ const pixelify = Pixelify_Sans({
 
 export default function HomeLayout() {
     return (
-        <section
+        <motion.section
+            initial={{ opacity: 0, translateY: 30 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{ delay: 0.175 }}
             id="home"
             className="max-w-screen-xl min-h-screen pt-14 mx-auto flex items-center"
         >
@@ -44,6 +49,6 @@ export default function HomeLayout() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
